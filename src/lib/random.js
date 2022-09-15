@@ -21,6 +21,9 @@ export function randomPick(arrayList) {
 }
 
 // 改进方法
+// 选择到1-n-1的概率为 (n-2)/(n-1)^2 即第一次没有选到的概率为n-2/n-1 第二次选到的概率为1/n-1
+// 选择到末位的情况的概率为1/(n-1) 即 第一次都会把 末尾带出 则第二次选择到末尾的概率为1/n-1
+// 当 n 趋近足够大的时候 则这两个等式趋近相等概率
 export function createRandomPick(arrayList) {
   arrayList = [...arrayList]
   function randomPickFunc() {

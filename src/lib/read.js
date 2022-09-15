@@ -4,7 +4,7 @@
  * @Date 2022-09-14
  */
 import { readFile, readFileSync } from 'fs'
-import { dirname, resolve } from 'path'
+import { resolve } from 'path'
 import { fileURLToPath } from 'url'
 // 相对路径./src/article/data.json是相对于脚本的运行目录 而不是脚本文件的目录
 readFile('./src/article/data.json', (err, file) => {
