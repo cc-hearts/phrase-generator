@@ -1,12 +1,12 @@
 // 采用ES Modules 规范
-import { readArticleSync } from './lib/read.js'
-import { createRandomPick } from './lib/random.js'
-import { generateArticle, generateArticleSeEdition } from './lib/generate.js'
+import { readArticleSync } from './src/lib/read.js'
+import { createRandomPick } from './src/lib/random.js'
+import { generateArticle, generateArticleSeEdition } from './src/lib/generate.js'
 import { writeFileSync } from 'fs'
 import { fileURLToPath } from 'url'
 import { resolve } from 'path'
 ;(() => {
-  const relativePath = resolve(fileURLToPath(import.meta.url), '../output')
+  const relativePath = resolve(fileURLToPath(import.meta.url), '../src/output')
   const entry = readArticleSync()
   const { title } = entry
   const randomPick = createRandomPick(title)
