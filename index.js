@@ -6,7 +6,8 @@ import { readArticleSync } from './src/lib/read.js'
 import { createRandomPick } from './src/lib/random.js'
 import { generateArticleSeEdition } from './src/lib/generate.js'
 import { parseCmdParams, showUsage } from './src/lib/cmd.js'
-import { interact } from './src/lib/interact.js'
+// import { interact } from './src/lib/interact.js'
+import { interact } from './src/lib/readline.js'
 ;(async () => {
   showUsage()
   // 通过命令行参数拿到数据
