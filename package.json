@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "pre-start": "node ./index.js --pMax 15 --pMin 5 --cMax 21 --cMin 10",
-    "start": "node ./index.js --articleLMax 10000 --articleLMin 6000 --sectionLMin 200 --sectionLMax 500"
+    "start": "node ./index.js --articleLMax 10000 --articleLMin 6000 --sectionLMin 200 --sectionLMax 500",
+    "dev": "node ./index.js"
   },
   "keywords": [
     "article"
