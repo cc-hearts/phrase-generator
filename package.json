@@ -5,9 +5,16 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "node ./index.js"
+    "pre-start": "node ./index.js --pMax 15 --pMin 5 --cMax 21 --cMin 10",
+    "start": "node ./index.js --articleLMax 10000 --articleLMin 6000 --sectionLMin 200 --sectionLMax 500"
   },
-  "keywords": ["article"],
+  "keywords": [
+    "article"
+  ],
   "author": "heart",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "command-line-args": "^5.2.1",
+    "command-line-usage": "^6.1.3"
+  }
 }
