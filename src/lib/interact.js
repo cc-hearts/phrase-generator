@@ -21,8 +21,12 @@ export function interact(options) {
       }
       process.stdin.read()
     })
-    process.stdin.on('end', () => {
-      resolve(val)
-    })
+    process.stdin
+      .on('end', () => {
+        resolve(val)
+      })
+      .catch((e) => {
+        reject(e)
+      })
   })
 }
