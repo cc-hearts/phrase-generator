@@ -1,0 +1,20 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body,
+html {
+  width: 100%;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#app {
+  padding: 12px 100px;
+}
+
+p {
+  text-indent: 2em;
+}
