@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
 }
+
+button {
+  border: none;
+}
 body,
 html {
   width: 100%;
@@ -17,4 +21,89 @@ h1 {
 
 p {
   text-indent: 2em;
+}
+
+.show-popup-layer {
+  display: flex;
+  padding: 8px;
+  position: fixed;
+  top: 28px;
+  right: 20px;
+  border: 1px solid #d9d9d9;
+  border-radius: 50%;
+  cursor: pointer;
+  background: transparent;
+}
+
+.show-popup-layer {
+  transition: color, border 0.3s cubic-bezier(0.16, 0.67, 0.6, 1.32);
+}
+
+.show-popup-layer svg {
+  transition: all 0.3s cubic-bezier(0.16, 0.67, 0.6, 1.32);
+}
+
+.show-popup-layer:hover {
+  --hover-color: #5ea7f8;
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+}
+
+.popup-layer {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 0;
+  background-color: #fff;
+  transition: all 0.28s ease-in;
+  z-index: 2;
+}
+
+.mask {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(25, 28, 34, 0.52);
+  z-index: 1;
+  backdrop-filter: blur(1px);
+}
+
+.progress-flex {
+  display: flex;
+  padding: 12px 16px;
+}
+.progress-flex input {
+  flex: 1;
+}
+.progress-flex > span {
+  display: inline-block;
+  width: 100px;
+  text-align: center;
+}
+
+.popup-title {
+  padding: 12px 16px;
+}
+
+.generator-btn {
+  padding: 3px 12px;
+  background-color: transparent;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  --hover-color: #5ea7f8;
+}
+
+.generator-btn:hover {
+  color: var(--hover-color);
+  border-color: var(--hover-color);
+}
+
+.operation {
+  padding: 0 16px;
 }
