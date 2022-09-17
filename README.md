@@ -4,10 +4,11 @@
 
 区分两个环境：
 
-- node
-  > ```js
-  > node index.js
-  > ```
+node
+
+> ```js
+> node index.js
+> ```
 
 可以使用`--help` 获取文章提示
 
@@ -16,5 +17,6 @@
 yarn start --help
 ```
 
-- browser
-  > Live Server index.html
+browser
+
+> Live Server index.html
