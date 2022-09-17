@@ -4,6 +4,7 @@
  * @Date 2022-09-17
  */
 import { generateArticle, reGeneratorArticleTitle } from './generate.js'
+import { getInputList } from './getter.js'
 function stopPropagation(e) {
   e.stopPropagation()
 }
@@ -44,10 +45,6 @@ function rangeChange(event) {
   spanNode && (spanNode.textContent = value)
 }
 
-function getInputList() {
-  return document.querySelectorAll('input[type="range"]')
-}
-
 function listenerInputRangeChange() {
   const inputList = getInputList()
   inputList.forEach((val) => {
@@ -65,25 +62,11 @@ export function addEvent() {
   listenerGenerateTitle()
 }
 
-export function getOptionsValue() {
-  const inputList = getInputList()
-  const val = {}
-  inputList.forEach((record) => {
-    val[record.name] = record.value
-  })
-  return val
-}
-
 function listenerGeneratorBtn() {
   const btn = document.getElementById('generator')
   if (btn) {
     btn.addEventListener('click', generateArticle, false)
   }
-}
-
-export function getArticleTitle() {
-  const [h1Node] = document.getElementsByTagName('h1')
-  return (h1Node && h1Node.textContent) || null
 }
 
 function listenerGenerateTitle() {

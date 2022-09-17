@@ -1,6 +1,6 @@
-import { generateArticleSeEdition } from '../lib/generate.js'
-import { getOptionsValue, getArticleTitle } from './setting.js'
 import { createRandomPick } from '../lib/random.js'
+import { generateArticleSeEdition } from '../lib/generate.js'
+import { getTitle, getOptionsValue } from './getter.js'
 import data from '../article/data.json' assert { type: 'json' }
 
 function generateTitle() {
@@ -19,7 +19,7 @@ export function parseSection(contents) {
 }
 
 export function generateArticle() {
-  const title = getArticleTitle() || generateTitle()
+  const title = getTitle() || generateTitle()
   const otherOptions = getOptionsValue()
   const contents = generateArticleSeEdition(title, data, otherOptions)
   // 持久化存储 使得更换标题不替换文章
@@ -47,8 +47,11 @@ export function generateArticleTitle() {
 
 // 重新生成标题
 export function reGeneratorArticleTitle() {
-  const preTitle = getArticleTitle()
-  const title = generateArticleTitle()
+  const preTitle = getTitle()
+  let title = generateArticleTitle()
+  while (title === preTitle) {
+    title = generateArticleTitle()
+  }
   const app = document.getElementById('app')
   if (app) {
     const contents = generateArticle.contents
@@ -57,6 +60,7 @@ export function reGeneratorArticleTitle() {
       contents.map((val) => {
         return val.replace(new RegExp(preTitle, 'g'), title)
       })
+    generateArticle.contents = newContents
     const pSections = parseSection(newContents)
     app.innerHTML = ''
     if (app && pSections instanceof Array) {
